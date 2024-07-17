@@ -32,6 +32,9 @@ jobs:
           aws-region: us-east-1
 
       - name: Sync files to S3
+        run: aws s3 ls s3://my-react-app-bucket
+
+      - name: Sync files to S3
         run: aws s3 sync build/ s3://my-react-app-bucket --delete
 
       - name: Invalidate CloudFront cache
